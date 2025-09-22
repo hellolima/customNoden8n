@@ -43,7 +43,7 @@ Este projeto utiliza as seguintes dependências no nó customizado:
 
 Siga estes passos para configurar e executar o projeto:
 
-1. **Clonar esse repositório.**
+1. **Clone esse repositório.**
 2. **`.env`**: Na pasta `docker/`, crie um arquivo chamado `.env` e defina as variáveis de ambiente necessárias para o PostgreSQL e o n8n.
    ```bash
    POSTGRES_USER=n8nuser
