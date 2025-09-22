@@ -2,10 +2,27 @@ import type { INodeType, INodeTypeDescription, INodeExecutionData, IExecuteFunct
 import axios from 'axios';
 
 async function fetchRandomNumber(min: number, max: number): Promise<number> {
-	const response = await axios.get(
-		`https://www.random.org/integers/?num=1&min=${min}&max=${max}&col=1&base=10&format=plain&rnd=new`,
-	);
-	return parseInt(response.data, 10);
+    const response = await axios.get(
+        `https://www.random.org/integers/?num=1&min=${min}&max=${max}&col=1&base=10&format=plain&rnd=new`,
+    );
+    return parseInt(response.data, 10);
+}
+
+function validateRange(min: number, max: number): string | null {
+    if (typeof min !== 'number' || typeof max !== 'number') {
+        return 'Minimum and maximum must be numbers';
+    }
+    if (!Number.isInteger(min) || !Number.isInteger(max)) {
+        return 'Minimum and maximum must be integers';
+    }
+    if (min >= max) {
+        return 'Minimum value must be less than maximum value';
+    }
+    return null;
+}
+
+function createErrorItem(error: string, min: number, max: number): INodeExecutionData {
+    return { json: { error, min, max } };
 }
 
 export class Random implements INodeType {
@@ -66,36 +83,17 @@ export class Random implements INodeType {
         ],
     };
 
-    
-
     async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
         const items = this.getInputData();
         const returnData: INodeExecutionData[] = [];
-    
-        function validateRange(min: number, max: number): string | null {
-            if (typeof min !== 'number' || typeof max !== 'number') {
-                return 'Minimum and maximum must be numbers';
-            }
-            if (!Number.isInteger(min) || !Number.isInteger(max)) {
-                return 'Minimum and maximum must be integers';
-            }
-            if (min >= max) {
-                return 'Minimum value must be less than maximum value';
-            }
-            return null;
-        }
-    
-        function createErrorItem(error: string, min: number, max: number): INodeExecutionData {
-            return { json: { error, min, max } };
-        }
-    
+
         for (let i = 0; i < items.length; i++) {
             const operation = this.getNodeParameter('operation', i) as string;
-    
+
             if (operation === 'trueRandom') {
                 const min = this.getNodeParameter('min', i) as number;
                 const max = this.getNodeParameter('max', i) as number;
-    
+
                 const errorMsg = validateRange(min, max);
                 if (errorMsg) {
                     this.logger.error(errorMsg, { min, max });
@@ -117,9 +115,6 @@ export class Random implements INodeType {
                 returnData.push({ json: { error: unknownOpMsg } });
             }
         }
-    
         return [returnData];
     }
-    
-    
 }
