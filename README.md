@@ -55,7 +55,7 @@ Siga estes passos para configurar e executar o projeto:
    ```bash
    sudo docker-compose up -d
    ```
-4. **Dependências e compilação**: Navegue até a pasta `nodes/` e execute os comandos para instalar as dependências e compilar o nó.
+4. **Dependências e compilação**: Navegue até a pasta `randomNode/` e execute os comandos para instalar as dependências e compilar o nó.
    ```bash
    npm install
    npm run build
