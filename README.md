@@ -58,8 +58,7 @@ Siga estes passos para configurar e executar o projeto:
 4. **Dependências e compilação**: Navegue até a pasta `randomNode/` e execute os comandos para instalar as dependências e compilar o nó.
    ```bash
    npm install
-   npm run build
-   npm link
+   npm run dev
    ```
 
 ---
