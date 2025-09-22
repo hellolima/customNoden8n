@@ -49,7 +49,6 @@ Siga estes passos para configurar e executar o projeto:
    POSTGRES_USER=n8nuser
    POSTGRES_PASSWORD=n8npassword
    POSTGRES_DATABASE=n8n
-   N8N_PORT=5678
    ```
 3. **Contêineres Docker**: Na pasta `docker/`, execute o comando para iniciar o n8n e o PostgreSQL.
    ```bash
