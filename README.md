@@ -4,17 +4,6 @@ Este projeto contém a configuração de um ambiente **n8n** via Docker Compose,
 
 ---
 
-## Índice
-
-1.  [Estrutura de Pastas](#-estrutura-de-pastas)
-2.  [Dependências](#-dependências)
-3.  [Configuração do Ambiente](#️-configuração-do-ambiente)
-4.  [Operação: True Random Number](#-operação-true-random-number)
-5.  [Como testar no n8n](#-como-testar-no-n8n)
-6.  [Referências](#-referências)
-
----
-
 ## Estrutura de Pastas
 
 - `docker/`: Contém arquivos de configuração para rodar o n8n via Docker Compose.
