@@ -17,15 +17,15 @@ Este projeto contém a configuração de um ambiente **n8n** via Docker Compose,
 
 ---
 
-## Dependências e Pré-requisitos Técnicos
+## Pré-requisitos Técnicos e Dependências
 
 Este projeto utiliza as seguintes ferramentas e bibliotecas:
 
 - Docker e Docker Compose: Necessários para gerenciar o ambiente do n8n e do PostgreSQL em contêineres.
 - Node.js: O ambiente de execução para o código do nó customizado.
+- Typescript: Linguagem de programação utilizada na tarefa.
 - n8n-workflow: Necessário para criar o nó customizado.
 - axios: Necessário para fazer a requisição à API.
-- Typescript: Linguagem de programação utilizada na tarefa.
 - copyfiles: Biblioteca para copiar arquivos.
 
 ---
