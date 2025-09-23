@@ -1,6 +1,6 @@
 # customNoden8n
 
-Este projeto contém a configuração de um ambiente **n8n** via Docker Compose, junto com um **nó customizado** para gerar números aleatórios consumindo a API do [Random.org](https://api.random.org/). O nó foi construído em TypeScript e é lido pelo n8n graças à configuração de volumes no Docker.
+Este projeto contém a configuração de um ambiente **n8n** via Docker Compose, junto com um **nó customizado** para gerar números aleatórios consumindo a API do [Random.org](https://api.random.org/). O nó foi construído em TypeScript e é lido pelo n8n.
 
 ---
 
